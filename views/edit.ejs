@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시물 수정 페이지</title>
+</head>
+<body>
+    <form action="/postEditDone" method="post">
+        <select name="editNumber" id="updateNumber">
+            <% postitem.forEach(function(el,index){ %>
+                <option value="<%- el.count %>">게시글 번호 <%- el.count %></option>
+            <% }) %>
+        </select>
+        
+        <label>수정할 게시글 제목</label>
+        <input type="text" name="editTitle" placeholder="수정할 게시글 제목">
+        <label>수정할 게시글 내용</label>
+        <input type="text" name="editContext" placeholder="수정할 게시글 내용">
+        <button type="submit">수정</button>
+    </form>
+</body>
+</html>

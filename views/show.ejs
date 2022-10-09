@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글 보여주는 메인 페이지</title>
+    <style>
+        .top {display:flex;}
+        .bot .line {display:flex;}
+        .bot .line .title {margin-right:50px; width:200px}
+        .bot .line .count {margin-right:125px;}
+        .postCount {margin-right:50px;}
+        .postTitle, .postContext {margin-right:165px;}
+        a {margin-right:50px;}
+    </style>
+</head>
+<body>
+    <div class="postList">
+        <div class="top">
+            <div class="postCount">게시글 번호</div>
+            <div class="postTitle">게시글 제목</div>
+            <div class="postContext">게시글 내용</div>
+            <a href="/postContext">게시물 작성</a>
+            <a href="/postEdit">게시물 수정</a>
+        </div>
+        <div class="bot">
+            <% postitem.forEach(function(el,index){ %>
+                <div class="line">
+                    <div class="count"><%- el.count %></div>
+                    <div class="title"><%- el.title %></div>
+                    <div class="context"><%- el.context %></div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</body>
+</html>
