@@ -79,7 +79,7 @@ app.get("/postEdit",function(req,res){
 // edit.ejs에서 받아온 값을 넣어준다
 app.post("/postEditDone",function(req,res){
     db.collection("dataList").update(
-        // 변경될 숫자 값
+        // 변경될 게시글을 가리키는 게시글 번호
         {
             count:Number(req.body.editNumber)
         },
